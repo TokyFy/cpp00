@@ -10,4 +10,5 @@ class PhoneBook {
 
 	public:
 		PhoneBook();
+		void add_contact(Contact &contact);
 };

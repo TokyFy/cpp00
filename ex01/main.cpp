@@ -1,9 +1,9 @@
-#include "Contact.hpp"
 #include <iostream>
+#include <string>
+#include "utils.hpp"
 
-int main()
-{
-	Contact me;
-	me.first_name = "hello";
-	std::cout << me.first_name << std::endl;
+int main() {
+	std::string foo = "         t    oky             ";
+	foo = 'A';
+	std::cout << foo;
 }
