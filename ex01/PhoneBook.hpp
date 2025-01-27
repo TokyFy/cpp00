@@ -4,11 +4,12 @@
 
 class PhoneBook {
 	private:
-		Contact contact[8];
+		Contact contacts[8];
 		int size;
 		int last_items;
 
 	public:
 		PhoneBook();
-		void add_contact(Contact &contact);
+		void add_contact(const Contact &contact);
+		void print_contacts() const;
 };
