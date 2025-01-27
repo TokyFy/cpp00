@@ -8,6 +8,6 @@ class Contact
 		std::string nickname;
 		std::string number;
 		std::string darkest_secret;
-		Contact();
 		void fill_contact();
+		void print_contact() const;
 };
