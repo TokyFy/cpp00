@@ -2,6 +2,7 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include "utils.hpp"
 
 #define MAX_CONTACTS_LENGTH 8
 
@@ -35,24 +36,27 @@ std::string str_strip(const std::string &str , const size_t len) {
 	return result;
 }
 
+
 void PhoneBook::print_contacts() const {
 	size_t i = 0;
 
-	std::cout << "\033[1m\033[47m\033[30m" << "│" << std::setw(10) << "INDEX";
+	std::cout << BG_WHITE << "│" << std::setw(10) << "INDEX";
 	std::cout << "│" << std::setw(10) << "FIRST NAME";
 	std::cout << "│" << std::setw(10) << "NICK NAME";
-	std::cout << "│" << std::setw(10) << "NUMBER";
-	std::cout << "│" << std::setw(10) << "SECRET" << "│" << "\033[0m" << std::endl;
+	std::cout << "│" << std::setw(10) << "NUMBER" << "│" << "\033[0m" << std::endl;
 
 	while (i < size) {
 		std::cout << "│" << std::setw(10) << str_strip(std::to_string(i) , 10) << "│";
 		std::cout <<  std::setw(10) << str_strip(contacts[i].first_name , 10) << "│";
 		std::cout <<  std::setw(10) << str_strip(contacts[i].nickname , 10) << "│";
 		std::cout <<  std::setw(10) << str_strip(contacts[i].number , 10) << "│";
-		std::cout <<  std::setw(10) << str_strip(contacts[i].darkest_secret , 10) << "│";
 		std::cout <<std::endl;
 		i++;
 	}
 
-	std::cout << "└──────────────────────────────────────────────────────┘" << std::endl;
+	std::cout << "└───────────────────────────────────────────┘" << std::endl;
+}
+
+Contact PhoneBook::get_contact(const uint index) {
+	return contacts[index % 8];
 }

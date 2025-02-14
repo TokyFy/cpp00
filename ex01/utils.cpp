@@ -35,12 +35,12 @@ void get_input(const std::string& prompts , std::string &buffer)
 		if (std::cin.eof()) {
 			break;
 		}
-		std::cout << "\033[1m\033[47m\033[30m" << std::setw(20) << prompts + " :" << "\033[0m" << " ";
+		std::cout << BG_WHITE << std::setw(20) << prompts + " :" << RESET << " ";
 		std::getline(std::cin , buffer);
 		str_trim(buffer);
 		str_clear_space(buffer);
 		if (!buffer.empty())
 			break;
-		std::cout  << "\033[3m" << "\033[38;5;245m" << "Error :" << prompts << " can't be undefined !" << std::endl;
+		std::cout  << ITALIC << GRAY << "Error :" << prompts << " can't be undefined !" << std::endl;
 	}
 }

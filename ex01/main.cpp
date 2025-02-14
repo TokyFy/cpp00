@@ -1,44 +1,63 @@
 #include "PhoneBook.hpp"
+#include <cctype>
 #include <iostream>
+#include <string>
 #include "utils.hpp"
 
 void home(PhoneBook &contacts);
 
 void add(PhoneBook &contacts) {
-    std::cout << "Fill the contact detail bellow\n";
+    std::cout << ITALIC GRAY UNDERLINE "\n                CONTACT DETAILS               \n" << RESET<< std::endl;
     Contact contact;
     contact.fill_contact();
     contacts.add_contact(contact);
+    std::cout << std::endl;
     home(contacts);
+}
+
+bool isalldigit(std::string str)
+{
+    for (char a : str) {
+        if(!std::isdigit(a))
+            return false;
+    }
+    return true;
 }
 
 void search(PhoneBook &contacts) {
     std::string index = "-1";
     int i = 0;
     std::cout << std::endl;
+    std::cout << ITALIC GRAY UNDERLINE "                    SEARCH                   \n" << RESET << std::endl;
     contacts.print_contacts();
 
-    get_input("Contact Index to view " , index);
+    while(42)
+    {
+        get_input("Index ", index);
+        if (std::cin.eof())
+            return;
+        if(isalldigit(index))
+            break;
+        std::cout << ITALIC GRAY << "Index should be a number" << std::endl;
+    }
     i = std::stoi(index);
-    if (i > contacts.get_size() - 1 || i < 0)
-        std::cout << "Contact Not fount" << std::endl;
+    if (contacts.get_size() == 0 || i > contacts.get_size() - 1 || i < 0)
+        std::cout << ITALIC GRAY << "Contact Not fount\n" << std::endl;
     else
-        contacts.contacts[i].print_contact();
+        contacts.get_contact(i).print_contact();
     home(contacts);
 }
 
 void home(PhoneBook &contacts) {
     std::string command;
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~ PHONEBOOK ~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
-    std::cout  << "\033[38;5;245m"  << "~ Commands :     [ ADD | SEARCH | EXIT ]            " << std::endl << std::endl;
 
     while (true) {
-        get_input("COMMANDS" , command);
+        get_input("COMMANDS", command);
         if (std::cin.eof() || command == "EXIT")
             return;
         if (command == "ADD" || command == "EXIT" || command == "SEARCH")
             break;
-        std::cout << "Commands should be [ ADD | SEARCH | EXIT ]" << std::endl;
+        std::cout << ITALIC GRAY << "Commands should be [ ADD | SEARCH | EXIT ]" << std::endl;
     }
     if (command == "ADD") {
         add(contacts);
@@ -47,6 +66,7 @@ void home(PhoneBook &contacts) {
 }
 
 int main() {
+    std::cout << ITALIC GRAY UNDERLINE "                  PHONEBOOK                  \n" << RESET << std::endl;
     PhoneBook clients;
     home(clients);
 }

@@ -14,8 +14,9 @@ void Contact::fill_contact()
 }
 
 void Contact::print_contact() const {
-	std::cout << "First Name :" << first_name << std::endl;
-	std::cout << "Nick Name :" << nickname << std::endl;
-	std::cout << "Number :" << number << std::endl;
-	std::cout << "Darkest Secret" << darkest_secret << std::endl;
+    std::cout << std::endl;
+	std::cout << BG_WHITE << " FIRST NAME         " << RESET << " " <<  first_name << std::endl;
+	std::cout << BG_WHITE << " NICK NAME          " << RESET << " " << nickname << std::endl;
+	std::cout << BG_WHITE << " NUMBER             " << RESET << " " << number << std::endl;
+	std::cout << BG_WHITE << " DARKEST SECRET     " << RESET << " " << darkest_secret << "\n\n";
 }
