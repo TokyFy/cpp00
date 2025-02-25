@@ -13,6 +13,22 @@ void str_trim(std::string &str)
 	str = str.substr(0, end + 1);
 }
 
+bool isalldigit(std::string str)
+{
+    for (size_t i = 0 ; i < str.size() ; i++) {
+    	char a = str[i];
+
+     	if(i == 0 && (str[i] == '+' || str[i] == '-'))
+        {
+      		continue;
+        }
+
+        if(!std::isdigit(a))
+            return false;
+    }
+    return true;
+}
+
 void str_clear_space(std::string &str)
 {
 	std::string result;

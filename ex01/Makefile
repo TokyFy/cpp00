@@ -1,5 +1,5 @@
 NAME = phonebook
-FLAGS = -g -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = Contact.cpp PhoneBook.cpp utils.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 COMPILER = c++

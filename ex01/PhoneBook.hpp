@@ -5,6 +5,7 @@
 
 #include "Contact.hpp"
 #include <cstdlib>
+#include "utils.hpp"
 
 class PhoneBook {
 	private:

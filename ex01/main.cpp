@@ -1,6 +1,4 @@
 #include "PhoneBook.hpp"
-#include "utils.hpp"
-
 
 void home(PhoneBook &contacts);
 
@@ -11,16 +9,6 @@ void add(PhoneBook &contacts) {
     contacts.add_contact(contact);
     std::cout << std::endl;
     home(contacts);
-}
-
-bool isalldigit(std::string str)
-{
-    for (size_t i = 0 ; i < str.size() ; i++) {
-    	char a = str[i];
-        if(!std::isdigit(a))
-            return false;
-    }
-    return true;
 }
 
 void search(PhoneBook &contacts) {

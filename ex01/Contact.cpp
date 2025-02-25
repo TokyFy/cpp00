@@ -1,11 +1,18 @@
 #include "Contact.hpp"
+#include "utils.hpp"
+#include <iostream>
 
 void Contact::fill_contact()
 {
 	get_input("First Name" , first_name);
 	get_input("Last Name" , last_name);
 	get_input("Nick Name" , nickname);
-	get_input("Number" , number);
+	while (42) {
+		get_input("Number" , number);
+		if(isalldigit(number))
+			break;
+		std::cout << ITALIC << GRAY << "Not a valid number" << RESET << std::endl;
+	}
 	get_input("Darkest Secret" , darkest_secret);
 }
 
