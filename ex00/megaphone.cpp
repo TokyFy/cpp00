@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstddef>
 #include <iostream>
 
 void uppercase_print(const std::string& str)
 {
-	for(char c : str)
-		std :: cout << (char)std::toupper(c);
+	for(size_t i = 0 ; i < str.size() ; i++)
+	{
+		std :: cout << (char)std::toupper(str[i]);
+	}
 }
 
 int main(int argc , char **argv)
@@ -23,7 +26,7 @@ int main(int argc , char **argv)
 	if(argc == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return EXIT_FAILURE;
+		return 1;
 	}
 
 	argv++;
@@ -31,4 +34,5 @@ int main(int argc , char **argv)
 		uppercase_print(*(argv++));
 
 	std::cout << std::endl;
+	return 0;
 }

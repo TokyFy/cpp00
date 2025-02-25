@@ -9,7 +9,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(COMPILER) $(FLAGS) $(OBJ) -o $(NAME)
 
-%o : %.cpp
+%.o : %.cpp
 	$(COMPILER) $(FLAGS) -c $< -o $@
 
 clean:

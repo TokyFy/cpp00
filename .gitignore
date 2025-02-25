@@ -1,5 +1,6 @@
 */*.o
 *.idea
 */*.idea
-*/*.phonebook
 */phonebook
+*/megaphone
+*/accounts
