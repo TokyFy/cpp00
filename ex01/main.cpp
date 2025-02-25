@@ -1,5 +1,8 @@
 #include "PhoneBook.hpp"
 #include "utils.hpp"
+#include <cstddef>
+#include <cstdlib>
+#include <iostream>
 
 void home(PhoneBook &contacts);
 
@@ -14,7 +17,8 @@ void add(PhoneBook &contacts) {
 
 bool isalldigit(std::string str)
 {
-    for (char a : str) {
+    for (size_t i = 0 ; i < str.size() ; i++) {
+    	char a = str[i];
         if(!std::isdigit(a))
             return false;
     }
@@ -23,7 +27,7 @@ bool isalldigit(std::string str)
 
 void search(PhoneBook &contacts) {
     std::string index = "-1";
-    int i = 0;
+    size_t i = 0;
     std::cout << std::endl;
     std::cout << ITALIC GRAY UNDERLINE "                     SEARCH                   \n" << RESET << std::endl;
     contacts.print_contacts();
@@ -37,7 +41,7 @@ void search(PhoneBook &contacts) {
             break;
         std::cout << ITALIC GRAY << "Index should be a number" << std::endl;
     }
-    i = std::stoi(index);
+    i = atoi(index.c_str());
     if (contacts.get_size() == 0 || i > contacts.get_size() - 1 || i < 0)
         std::cout << ITALIC GRAY << "Contact Not fount\n" << std::endl;
     else
@@ -63,6 +67,7 @@ void home(PhoneBook &contacts) {
 }
 
 int main() {
+	std::cout << CLEAR;
     std::cout << ITALIC GRAY UNDERLINE "                   PHONEBOOK                  \n" << RESET << std::endl;
     PhoneBook clients;
     home(clients);

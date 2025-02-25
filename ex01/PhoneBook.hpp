@@ -8,7 +8,7 @@
 
 class PhoneBook {
 	private:
-		int size;
+		size_t size;
 		int last_items;
 		Contact contacts[8];
 

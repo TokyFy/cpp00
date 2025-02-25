@@ -12,6 +12,7 @@
 #define GRAY "\033[38;5;245m"
 #define RESET "\033[0m"
 #define UNDERLINE "\033[4m"
+#define CLEAR "\033[2J\033[1;1H"
 
 void get_input(const std::string& prompts , std::string &buffer);
 void str_trim(std::string &str);

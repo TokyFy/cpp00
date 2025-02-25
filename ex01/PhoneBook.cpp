@@ -1,6 +1,7 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include "utils.hpp"
+#include <cstdlib>
 
 #define MAX_CONTACTS_LENGTH 8
 
@@ -40,14 +41,14 @@ void PhoneBook::print_contacts() const {
 
 	std::cout << BG_WHITE << "│" << std::setw(10) << "INDEX";
 	std::cout << "│" << std::setw(10) << "FIRST NAME";
-	std::cout << "│" << std::setw(10) << "NICK NAME";
-	std::cout << "│" << std::setw(10) << "NUMBER" << "│" << "\033[0m" << std::endl;
+	std::cout << "│" << std::setw(10) << "LAST NAME";
+	std::cout << "│" << std::setw(10) << "NICK NAME" << "│" << "\033[0m" << std::endl;
 
 	while (i < size) {
-		std::cout << "│" << std::setw(10) << str_strip(std::to_string(i) , 10) << "│";
+		std::cout << "│" << std::setw(10) << i << "│";
 		std::cout <<  std::setw(10) << str_strip(contacts[i].first_name , 10) << "│";
+		std::cout <<  std::setw(10) << str_strip(contacts[i].last_name , 10) << "│";
 		std::cout <<  std::setw(10) << str_strip(contacts[i].nickname , 10) << "│";
-		std::cout <<  std::setw(10) << str_strip(contacts[i].number , 10) << "│";
 		std::cout <<std::endl;
 		i++;
 	}
