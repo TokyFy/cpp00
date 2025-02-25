@@ -4,6 +4,9 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iomanip>
+#include <iostream>
+#include "utils.hpp"
 
 class Contact
 {

@@ -1,9 +1,4 @@
-#include <iomanip>
-#include <iostream>
-#include <string>
 #include "Contact.hpp"
-#include "utils.hpp"
-
 
 void Contact::fill_contact()
 {

@@ -4,7 +4,7 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#include <sys/types.h>
+#include <cstdlib>
 
 class PhoneBook {
 	private:
