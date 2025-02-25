@@ -1,5 +1,3 @@
-#include <iostream>
-#include <iomanip>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include "utils.hpp"
@@ -58,5 +56,5 @@ void PhoneBook::print_contacts() const {
 }
 
 Contact PhoneBook::get_contact(const uint index) {
-	return contacts[index % 8];
+	return contacts[index % MAX_CONTACTS_LENGTH];
 }

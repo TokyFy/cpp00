@@ -1,7 +1,4 @@
 #include "PhoneBook.hpp"
-#include <cctype>
-#include <iostream>
-#include <string>
 #include "utils.hpp"
 
 void home(PhoneBook &contacts);
@@ -28,7 +25,7 @@ void search(PhoneBook &contacts) {
     std::string index = "-1";
     int i = 0;
     std::cout << std::endl;
-    std::cout << ITALIC GRAY UNDERLINE "                    SEARCH                   \n" << RESET << std::endl;
+    std::cout << ITALIC GRAY UNDERLINE "                     SEARCH                   \n" << RESET << std::endl;
     contacts.print_contacts();
 
     while(42)
@@ -66,7 +63,7 @@ void home(PhoneBook &contacts) {
 }
 
 int main() {
-    std::cout << ITALIC GRAY UNDERLINE "                  PHONEBOOK                  \n" << RESET << std::endl;
+    std::cout << ITALIC GRAY UNDERLINE "                   PHONEBOOK                  \n" << RESET << std::endl;
     PhoneBook clients;
     home(clients);
 }

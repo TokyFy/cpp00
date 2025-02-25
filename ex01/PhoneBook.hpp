@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
 #include <sys/types.h>
 
@@ -16,3 +19,5 @@ class PhoneBook {
 		size_t get_size() const;
 		Contact get_contact(uint index);
 };
+
+#endif

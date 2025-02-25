@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include <string>
 
 class Contact
@@ -7,7 +11,11 @@ class Contact
 		std::string first_name;
 		std::string nickname;
 		std::string number;
-		std::string darkest_secret;
 		void fill_contact();
 		void print_contact() const;
+
+	private:
+		std::string darkest_secret;
 };
+
+#endif
