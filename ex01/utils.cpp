@@ -1,5 +1,4 @@
 #include "utils.hpp"
-#include <cstddef>
 
 void str_trim(std::string &str)
 {

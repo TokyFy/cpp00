@@ -1,6 +1,5 @@
 #include "PhoneBook.hpp"
 
-
 #define MAX_CONTACTS_LENGTH 8
 
 PhoneBook::PhoneBook()
@@ -54,6 +53,6 @@ void PhoneBook::print_contacts() const {
 	std::cout << "└───────────────────────────────────────────┘" << std::endl;
 }
 
-Contact PhoneBook::get_contact(const uint index) {
+Contact PhoneBook::get_contact(const unsigned int index) {
 	return contacts[index % MAX_CONTACTS_LENGTH];
 }

@@ -1,4 +1,3 @@
-#include <cstddef>
 #include <iostream>
 
 void uppercase_print(const std::string& str)

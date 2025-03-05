@@ -4,7 +4,6 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#include <cstdlib>
 #include "utils.hpp"
 
 class PhoneBook {
@@ -18,7 +17,7 @@ class PhoneBook {
 		void add_contact(const Contact &contact);
 		void print_contacts() const;
 		size_t get_size() const;
-		Contact get_contact(uint index);
+		Contact get_contact(unsigned int index);
 };
 
 #endif
